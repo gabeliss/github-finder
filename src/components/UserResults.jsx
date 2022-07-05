@@ -1,5 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
+import User from './User'
 
 function UserResults() {
 
@@ -19,14 +20,21 @@ function UserResults() {
 
     if (!isLoading)
         return (
-            <div>
+            <div className='users'>
                 {users.map(user => (
-                    <h3>{user.login}</h3>
+                    <h3><User key={user.id} user={user}/></h3>
                 ))}
             </div>
         )
     else {
-        <h3>Loading</h3>
+        return(
+            <>  
+                <div>
+                    <h3>Loading...</h3>
+                    <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                </div>
+            </>
+        )
     }
 }
 
