@@ -1,22 +1,15 @@
-import React from 'react'
-import { useEffect, useState } from 'react'
+import React, { useContext } from 'react'
+import { useEffect} from 'react'
 import User from './User'
+import GithubContext from './context/GithubContext'
 
 function UserResults() {
 
-    const [users, setUsers] = useState([])
-    const [isLoading, setIsLoading] = useState(true)
+    const {users, isLoading, fetchUsers} = useContext(GithubContext)
 
     useEffect(() => {
         fetchUsers()
     }, [])
-
-    const fetchUsers = async () => {
-        const response = await fetch(`${process.env.REACT_APP_GITHUB_URL}/users`)
-        const data = await response.json()
-        setUsers(data)
-        setIsLoading(false)
-    }
 
     if (!isLoading)
         return (
@@ -31,7 +24,7 @@ function UserResults() {
             <>  
                 <div>
                     <h3>Loading...</h3>
-                    <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                    <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
                 </div>
             </>
         )
