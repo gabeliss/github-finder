@@ -10,13 +10,11 @@ function App() {
     <GithubProvider>
       <BrowserRouter>
         <Header />
-          <div className="App">
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="about" element={<AboutPage />} />
                 <Route path="*" element={<NotFoundPage />} />
             </Routes>
-          </div>
       </BrowserRouter>
     </GithubProvider>
   );

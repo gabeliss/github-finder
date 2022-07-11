@@ -6,6 +6,7 @@ body {
 
 .App {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     margin-top: 25px;
@@ -96,6 +97,64 @@ header {
     border-radius: 30%;
     margin: 3px;
     color: silver;
+}
+
+.usersearch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 500px;
+  height: 100px;
+}
+
+.search-form {
+  position: relative;
+  border: none;
+}
+
+.search-bar {
+  font-size: larger;
+  border: none;
+  border-radius:10px;
+  height: 50px;
+  width: 400px;
+}
+
+.go-btn > button{
+  background-color: black;
+  color: white;
+  font-size: large;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  border-radius:0px 10px 10px 0px;
+  height: 52px;
+  width: 60px;
+}
+
+.go-btn > button:active {
+    transform: scale(0.98);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+.clear-btn > button {
+  background-color: transparent;
+  color: white;
+  font-size: large;
+  border: none;
+  border-radius: 10px;
+  height: 52px;
+  width: 60px;
+}
+
+.clear-btn > button:hover {
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+}
+
+.clear-btn >button:active {
+  transform: scale(0.98);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
 
 
