@@ -12,7 +12,7 @@ function User({user}) {
                 <h3>{user.login}</h3>
             </div>
             <div className='visitprofile'>
-                <Link to={`/users/${user.login}`}>
+                <Link to={`/user/${user.login}`}>
                 <button className='profilebtn'>Visit Profile</button>
                 </Link>
             </div>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function NotFoundPage() {
   return (
-    <div>
+    <div className='App'>
         <h1>Oops</h1>
         <h2>404 - Page Not Found</h2>
         <Link to="/">
