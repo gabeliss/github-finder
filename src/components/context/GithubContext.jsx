@@ -24,7 +24,6 @@ export function GithubProvider({children}) {
         })
 
         const response = await fetch(`${GITHUB_URL}/search/users?${params}`)
-        console.log(response)
         const {items} = await response.json()
         // this is same thing as above line -> const items = (await response.json()).items
         
@@ -38,13 +37,15 @@ export function GithubProvider({children}) {
     const getUser = async (login) => {
         setLoading()
 
-        const response = await fetch(`${GITHUB_URL}/users?${login}`)
+        const response = await fetch(`${GITHUB_URL}/users/${login}`)
+        console.log(response)
         
         if (response.status === 404) {
             window.location = '/notfound'
         }
         else {
             const data = await response.json()
+            console.log(data)
             dispatch({
                 type: 'GET_USER',
                 payload: data,
