@@ -11,6 +11,7 @@ function UserPage() {
 
   useEffect(() => {
     getUser(params.login)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const {
