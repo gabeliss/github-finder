@@ -15,18 +15,10 @@ function UserPage() {
 
   const {
     name,
-    company,
     avatar_url,
-    location,
     bio,
-    blog,
     login,
     html_url,
-    followers,
-    following,
-    public_repos,
-    public_gists,
-    hireable
   } = user;
 
   if (!isLoading) {
